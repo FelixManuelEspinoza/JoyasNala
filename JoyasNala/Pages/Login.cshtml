@@ -1,0 +1,89 @@
+﻿@page
+@model JoyasNala.Pages.LoginModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Login - JoyasNala</title>
+    <style>
+        body {
+            background-image: url('/images/WhatsApp Image 2024-11-02 at 20.37.55.jpeg'); /* Asegúrate de tener la imagen de fondo en esta ruta */
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            max-width: 400px;
+            width: 100%;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+        }
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .login-container button {
+            padding: 10px;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        .quote {
+            margin-top: 20px;
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login</h1>
+        <form method="post">
+            <div>
+                <label for="username">Cliente</label>
+                <input type="text" id="username" name="username" required />
+            </div>
+            <div>
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required />
+            </div>
+            <div>
+                <button type="submit">Entrar</button>
+            </div>
+        </form>
+        @if (!string.IsNullOrEmpty(Model.Message))
+        {
+            <div class="alert">@Model.Message</div>
+        }
+        <div class="quote">
+            "Hermosas son tus mejillas entre los pendientes, tu cuello entre los collares.
+            Te haremos pendientes de oro, tachonados de plata." <br>
+            Cantares 1:10-11 (RVR1960)
+        </div>
+    </div>
+</body>
+</html>
